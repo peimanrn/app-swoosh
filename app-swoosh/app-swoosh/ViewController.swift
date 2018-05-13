@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         
     }
     @IBAction func unwindFromSkillVC(unwindSegue: UIStoryboardSegue){
-        print("did pressed")
+
+    
     }
 
 
