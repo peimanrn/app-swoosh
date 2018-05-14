@@ -9,6 +9,7 @@
 import UIKit
 
 class LeagueVC: UIViewController {
+    
     var player :Player!
     @IBAction func onCoedTapped(_ sender: Any) {
         selectLeague(leagueType: "coed")
@@ -27,6 +28,11 @@ class LeagueVC: UIViewController {
     @IBOutlet weak var nextBtn: BorderButton!
     @IBAction func onNextTapped(_ sender: Any) {
         performSegue(withIdentifier: "skillVCSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC {
+            skillVC.player = player
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
